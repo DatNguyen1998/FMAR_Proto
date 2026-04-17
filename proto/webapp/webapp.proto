@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+package webapp;
+
+option go_package = "github.com/DatNguyen1998/FMAR_Proto/gen/webapp;webapppb";
+
+
+service WebappService {
+    rpc SubmitReview(SubmitReviewRequest) returns (SubmitReviewResponse);
+    rpc Ping(PingRequest) returns (PingResponse);
+}
+
+message PingRequest {
+    string message = 1;
+}
+
+message PingResponse {
+    string message = 2;
+} 
+
+message SubmitReviewRequest {
+    string phone = 1;
+    int32 rate = 2;
+    string comment = 3;
+}
+
+message SubmitReviewResponse {
+    bool isSuccess = 1;
+    ErrorResponse error = 2;
+}
+
+message ErrorResponse {
+    string code = 1;
+    string title = 2;
+    string detail = 3;
+}
