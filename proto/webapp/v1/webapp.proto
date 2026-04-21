@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package webapp;
 
-option go_package = "github.com/DatNguyen1998/FMAR_Proto/gen/go/webapp/v1;webapppb";
+option go_package = "github.com/DatNguyen1998/FMAR_Proto/webapp/v1;webapppb";
 
 service WebappService {
     rpc SubmitReview(SubmitReviewRequest) returns (SubmitReviewResponse);

@@ -303,7 +303,7 @@ const file_proto_webapp_v1_webapp_proto_rawDesc = "" +
 	"\x06detail\x18\x03 \x01(\tR\x06detail2\x8d\x01\n" +
 	"\rWebappService\x12I\n" +
 	"\fSubmitReview\x12\x1b.webapp.SubmitReviewRequest\x1a\x1c.webapp.SubmitReviewResponse\x121\n" +
-	"\x04Ping\x12\x13.webapp.PingRequest\x1a\x14.webapp.PingResponseB?Z=github.com/DatNguyen1998/FMAR_Proto/gen/go/webapp/v1;webapppbb\x06proto3"
+	"\x04Ping\x12\x13.webapp.PingRequest\x1a\x14.webapp.PingResponseB8Z6github.com/DatNguyen1998/FMAR_Proto/webapp/v1;webapppbb\x06proto3"
 
 var (
 	file_proto_webapp_v1_webapp_proto_rawDescOnce sync.Once
