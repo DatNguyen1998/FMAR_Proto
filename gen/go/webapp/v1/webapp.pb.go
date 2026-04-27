@@ -171,8 +171,11 @@ func (x *SubmitReviewRequest) GetComment() string {
 
 type SubmitReviewResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	IsSuccess     bool                   `protobuf:"varint,1,opt,name=isSuccess,proto3" json:"isSuccess,omitempty"`
-	Error         *ErrorResponse         `protobuf:"bytes,2,opt,name=error,proto3" json:"error,omitempty"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Rate          int32                  `protobuf:"varint,2,opt,name=rate,proto3" json:"rate,omitempty"`
+	Comment       string                 `protobuf:"bytes,3,opt,name=comment,proto3" json:"comment,omitempty"`
+	Phone         string                 `protobuf:"bytes,4,opt,name=phone,proto3" json:"phone,omitempty"`
+	CreatedAt     string                 `protobuf:"bytes,5,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -207,76 +210,37 @@ func (*SubmitReviewResponse) Descriptor() ([]byte, []int) {
 	return file_proto_webapp_v1_webapp_proto_rawDescGZIP(), []int{3}
 }
 
-func (x *SubmitReviewResponse) GetIsSuccess() bool {
+func (x *SubmitReviewResponse) GetId() string {
 	if x != nil {
-		return x.IsSuccess
-	}
-	return false
-}
-
-func (x *SubmitReviewResponse) GetError() *ErrorResponse {
-	if x != nil {
-		return x.Error
-	}
-	return nil
-}
-
-type ErrorResponse struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Code          string                 `protobuf:"bytes,1,opt,name=code,proto3" json:"code,omitempty"`
-	Title         string                 `protobuf:"bytes,2,opt,name=title,proto3" json:"title,omitempty"`
-	Detail        string                 `protobuf:"bytes,3,opt,name=detail,proto3" json:"detail,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *ErrorResponse) Reset() {
-	*x = ErrorResponse{}
-	mi := &file_proto_webapp_v1_webapp_proto_msgTypes[4]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *ErrorResponse) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*ErrorResponse) ProtoMessage() {}
-
-func (x *ErrorResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_webapp_v1_webapp_proto_msgTypes[4]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use ErrorResponse.ProtoReflect.Descriptor instead.
-func (*ErrorResponse) Descriptor() ([]byte, []int) {
-	return file_proto_webapp_v1_webapp_proto_rawDescGZIP(), []int{4}
-}
-
-func (x *ErrorResponse) GetCode() string {
-	if x != nil {
-		return x.Code
+		return x.Id
 	}
 	return ""
 }
 
-func (x *ErrorResponse) GetTitle() string {
+func (x *SubmitReviewResponse) GetRate() int32 {
 	if x != nil {
-		return x.Title
+		return x.Rate
+	}
+	return 0
+}
+
+func (x *SubmitReviewResponse) GetComment() string {
+	if x != nil {
+		return x.Comment
 	}
 	return ""
 }
 
-func (x *ErrorResponse) GetDetail() string {
+func (x *SubmitReviewResponse) GetPhone() string {
 	if x != nil {
-		return x.Detail
+		return x.Phone
+	}
+	return ""
+}
+
+func (x *SubmitReviewResponse) GetCreatedAt() string {
+	if x != nil {
+		return x.CreatedAt
 	}
 	return ""
 }
@@ -293,14 +257,14 @@ const file_proto_webapp_v1_webapp_proto_rawDesc = "" +
 	"\x13SubmitReviewRequest\x12\x14\n" +
 	"\x05phone\x18\x01 \x01(\tR\x05phone\x12\x12\n" +
 	"\x04rate\x18\x02 \x01(\x05R\x04rate\x12\x18\n" +
-	"\acomment\x18\x03 \x01(\tR\acomment\"a\n" +
-	"\x14SubmitReviewResponse\x12\x1c\n" +
-	"\tisSuccess\x18\x01 \x01(\bR\tisSuccess\x12+\n" +
-	"\x05error\x18\x02 \x01(\v2\x15.webapp.ErrorResponseR\x05error\"Q\n" +
-	"\rErrorResponse\x12\x12\n" +
-	"\x04code\x18\x01 \x01(\tR\x04code\x12\x14\n" +
-	"\x05title\x18\x02 \x01(\tR\x05title\x12\x16\n" +
-	"\x06detail\x18\x03 \x01(\tR\x06detail2\x8d\x01\n" +
+	"\acomment\x18\x03 \x01(\tR\acomment\"\x89\x01\n" +
+	"\x14SubmitReviewResponse\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
+	"\x04rate\x18\x02 \x01(\x05R\x04rate\x12\x18\n" +
+	"\acomment\x18\x03 \x01(\tR\acomment\x12\x14\n" +
+	"\x05phone\x18\x04 \x01(\tR\x05phone\x12\x1d\n" +
+	"\n" +
+	"created_at\x18\x05 \x01(\tR\tcreatedAt2\x8d\x01\n" +
 	"\rWebappService\x12I\n" +
 	"\fSubmitReview\x12\x1b.webapp.SubmitReviewRequest\x1a\x1c.webapp.SubmitReviewResponse\x121\n" +
 	"\x04Ping\x12\x13.webapp.PingRequest\x1a\x14.webapp.PingResponseB8Z6github.com/DatNguyen1998/FMAR_Proto/webapp/v1;webapppbb\x06proto3"
@@ -317,25 +281,23 @@ func file_proto_webapp_v1_webapp_proto_rawDescGZIP() []byte {
 	return file_proto_webapp_v1_webapp_proto_rawDescData
 }
 
-var file_proto_webapp_v1_webapp_proto_msgTypes = make([]protoimpl.MessageInfo, 5)
+var file_proto_webapp_v1_webapp_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
 var file_proto_webapp_v1_webapp_proto_goTypes = []any{
 	(*PingRequest)(nil),          // 0: webapp.PingRequest
 	(*PingResponse)(nil),         // 1: webapp.PingResponse
 	(*SubmitReviewRequest)(nil),  // 2: webapp.SubmitReviewRequest
 	(*SubmitReviewResponse)(nil), // 3: webapp.SubmitReviewResponse
-	(*ErrorResponse)(nil),        // 4: webapp.ErrorResponse
 }
 var file_proto_webapp_v1_webapp_proto_depIdxs = []int32{
-	4, // 0: webapp.SubmitReviewResponse.error:type_name -> webapp.ErrorResponse
-	2, // 1: webapp.WebappService.SubmitReview:input_type -> webapp.SubmitReviewRequest
-	0, // 2: webapp.WebappService.Ping:input_type -> webapp.PingRequest
-	3, // 3: webapp.WebappService.SubmitReview:output_type -> webapp.SubmitReviewResponse
-	1, // 4: webapp.WebappService.Ping:output_type -> webapp.PingResponse
-	3, // [3:5] is the sub-list for method output_type
-	1, // [1:3] is the sub-list for method input_type
-	1, // [1:1] is the sub-list for extension type_name
-	1, // [1:1] is the sub-list for extension extendee
-	0, // [0:1] is the sub-list for field type_name
+	2, // 0: webapp.WebappService.SubmitReview:input_type -> webapp.SubmitReviewRequest
+	0, // 1: webapp.WebappService.Ping:input_type -> webapp.PingRequest
+	3, // 2: webapp.WebappService.SubmitReview:output_type -> webapp.SubmitReviewResponse
+	1, // 3: webapp.WebappService.Ping:output_type -> webapp.PingResponse
+	2, // [2:4] is the sub-list for method output_type
+	0, // [0:2] is the sub-list for method input_type
+	0, // [0:0] is the sub-list for extension type_name
+	0, // [0:0] is the sub-list for extension extendee
+	0, // [0:0] is the sub-list for field type_name
 }
 
 func init() { file_proto_webapp_v1_webapp_proto_init() }
@@ -349,7 +311,7 @@ func file_proto_webapp_v1_webapp_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_proto_webapp_v1_webapp_proto_rawDesc), len(file_proto_webapp_v1_webapp_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   5,
+			NumMessages:   4,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

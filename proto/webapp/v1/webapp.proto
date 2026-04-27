@@ -24,12 +24,9 @@ message SubmitReviewRequest {
 }
 
 message SubmitReviewResponse {
-    bool isSuccess = 1;
-    ErrorResponse error = 2;
-}
-
-message ErrorResponse {
-    string code = 1;
-    string title = 2;
-    string detail = 3;
+    string id = 1;
+    int32 rate = 2;
+    string comment = 3;
+    string phone = 4;
+    string created_at = 5;
 }
