@@ -21,94 +21,6 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-type PingRequest struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Message       string                 `protobuf:"bytes,1,opt,name=message,proto3" json:"message,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *PingRequest) Reset() {
-	*x = PingRequest{}
-	mi := &file_proto_webapp_v1_webapp_proto_msgTypes[0]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *PingRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*PingRequest) ProtoMessage() {}
-
-func (x *PingRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_webapp_v1_webapp_proto_msgTypes[0]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use PingRequest.ProtoReflect.Descriptor instead.
-func (*PingRequest) Descriptor() ([]byte, []int) {
-	return file_proto_webapp_v1_webapp_proto_rawDescGZIP(), []int{0}
-}
-
-func (x *PingRequest) GetMessage() string {
-	if x != nil {
-		return x.Message
-	}
-	return ""
-}
-
-type PingResponse struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Message       string                 `protobuf:"bytes,2,opt,name=message,proto3" json:"message,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *PingResponse) Reset() {
-	*x = PingResponse{}
-	mi := &file_proto_webapp_v1_webapp_proto_msgTypes[1]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *PingResponse) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*PingResponse) ProtoMessage() {}
-
-func (x *PingResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_webapp_v1_webapp_proto_msgTypes[1]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use PingResponse.ProtoReflect.Descriptor instead.
-func (*PingResponse) Descriptor() ([]byte, []int) {
-	return file_proto_webapp_v1_webapp_proto_rawDescGZIP(), []int{1}
-}
-
-func (x *PingResponse) GetMessage() string {
-	if x != nil {
-		return x.Message
-	}
-	return ""
-}
-
 type SubmitReviewRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Phone         string                 `protobuf:"bytes,1,opt,name=phone,proto3" json:"phone,omitempty"`
@@ -120,7 +32,7 @@ type SubmitReviewRequest struct {
 
 func (x *SubmitReviewRequest) Reset() {
 	*x = SubmitReviewRequest{}
-	mi := &file_proto_webapp_v1_webapp_proto_msgTypes[2]
+	mi := &file_proto_webapp_v1_webapp_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -132,7 +44,7 @@ func (x *SubmitReviewRequest) String() string {
 func (*SubmitReviewRequest) ProtoMessage() {}
 
 func (x *SubmitReviewRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_webapp_v1_webapp_proto_msgTypes[2]
+	mi := &file_proto_webapp_v1_webapp_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -145,7 +57,7 @@ func (x *SubmitReviewRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SubmitReviewRequest.ProtoReflect.Descriptor instead.
 func (*SubmitReviewRequest) Descriptor() ([]byte, []int) {
-	return file_proto_webapp_v1_webapp_proto_rawDescGZIP(), []int{2}
+	return file_proto_webapp_v1_webapp_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *SubmitReviewRequest) GetPhone() string {
@@ -182,7 +94,7 @@ type SubmitReviewResponse struct {
 
 func (x *SubmitReviewResponse) Reset() {
 	*x = SubmitReviewResponse{}
-	mi := &file_proto_webapp_v1_webapp_proto_msgTypes[3]
+	mi := &file_proto_webapp_v1_webapp_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -194,7 +106,7 @@ func (x *SubmitReviewResponse) String() string {
 func (*SubmitReviewResponse) ProtoMessage() {}
 
 func (x *SubmitReviewResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_webapp_v1_webapp_proto_msgTypes[3]
+	mi := &file_proto_webapp_v1_webapp_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -207,7 +119,7 @@ func (x *SubmitReviewResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SubmitReviewResponse.ProtoReflect.Descriptor instead.
 func (*SubmitReviewResponse) Descriptor() ([]byte, []int) {
-	return file_proto_webapp_v1_webapp_proto_rawDescGZIP(), []int{3}
+	return file_proto_webapp_v1_webapp_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *SubmitReviewResponse) GetId() string {
@@ -249,11 +161,7 @@ var File_proto_webapp_v1_webapp_proto protoreflect.FileDescriptor
 
 const file_proto_webapp_v1_webapp_proto_rawDesc = "" +
 	"\n" +
-	"\x1cproto/webapp/v1/webapp.proto\x12\x06webapp\"'\n" +
-	"\vPingRequest\x12\x18\n" +
-	"\amessage\x18\x01 \x01(\tR\amessage\"(\n" +
-	"\fPingResponse\x12\x18\n" +
-	"\amessage\x18\x02 \x01(\tR\amessage\"Y\n" +
+	"\x1cproto/webapp/v1/webapp.proto\x12\x06webapp\"Y\n" +
 	"\x13SubmitReviewRequest\x12\x14\n" +
 	"\x05phone\x18\x01 \x01(\tR\x05phone\x12\x12\n" +
 	"\x04rate\x18\x02 \x01(\x05R\x04rate\x12\x18\n" +
@@ -264,10 +172,9 @@ const file_proto_webapp_v1_webapp_proto_rawDesc = "" +
 	"\acomment\x18\x03 \x01(\tR\acomment\x12\x14\n" +
 	"\x05phone\x18\x04 \x01(\tR\x05phone\x12\x1d\n" +
 	"\n" +
-	"created_at\x18\x05 \x01(\tR\tcreatedAt2\x8d\x01\n" +
+	"created_at\x18\x05 \x01(\tR\tcreatedAt2Z\n" +
 	"\rWebappService\x12I\n" +
-	"\fSubmitReview\x12\x1b.webapp.SubmitReviewRequest\x1a\x1c.webapp.SubmitReviewResponse\x121\n" +
-	"\x04Ping\x12\x13.webapp.PingRequest\x1a\x14.webapp.PingResponseB8Z6github.com/DatNguyen1998/FMAR_Proto/webapp/v1;webapppbb\x06proto3"
+	"\fSubmitReview\x12\x1b.webapp.SubmitReviewRequest\x1a\x1c.webapp.SubmitReviewResponseB8Z6github.com/DatNguyen1998/FMAR_Proto/webapp/v1;webapppbb\x06proto3"
 
 var (
 	file_proto_webapp_v1_webapp_proto_rawDescOnce sync.Once
@@ -281,20 +188,16 @@ func file_proto_webapp_v1_webapp_proto_rawDescGZIP() []byte {
 	return file_proto_webapp_v1_webapp_proto_rawDescData
 }
 
-var file_proto_webapp_v1_webapp_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
+var file_proto_webapp_v1_webapp_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
 var file_proto_webapp_v1_webapp_proto_goTypes = []any{
-	(*PingRequest)(nil),          // 0: webapp.PingRequest
-	(*PingResponse)(nil),         // 1: webapp.PingResponse
-	(*SubmitReviewRequest)(nil),  // 2: webapp.SubmitReviewRequest
-	(*SubmitReviewResponse)(nil), // 3: webapp.SubmitReviewResponse
+	(*SubmitReviewRequest)(nil),  // 0: webapp.SubmitReviewRequest
+	(*SubmitReviewResponse)(nil), // 1: webapp.SubmitReviewResponse
 }
 var file_proto_webapp_v1_webapp_proto_depIdxs = []int32{
-	2, // 0: webapp.WebappService.SubmitReview:input_type -> webapp.SubmitReviewRequest
-	0, // 1: webapp.WebappService.Ping:input_type -> webapp.PingRequest
-	3, // 2: webapp.WebappService.SubmitReview:output_type -> webapp.SubmitReviewResponse
-	1, // 3: webapp.WebappService.Ping:output_type -> webapp.PingResponse
-	2, // [2:4] is the sub-list for method output_type
-	0, // [0:2] is the sub-list for method input_type
+	0, // 0: webapp.WebappService.SubmitReview:input_type -> webapp.SubmitReviewRequest
+	1, // 1: webapp.WebappService.SubmitReview:output_type -> webapp.SubmitReviewResponse
+	1, // [1:2] is the sub-list for method output_type
+	0, // [0:1] is the sub-list for method input_type
 	0, // [0:0] is the sub-list for extension type_name
 	0, // [0:0] is the sub-list for extension extendee
 	0, // [0:0] is the sub-list for field type_name
@@ -311,7 +214,7 @@ func file_proto_webapp_v1_webapp_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_proto_webapp_v1_webapp_proto_rawDesc), len(file_proto_webapp_v1_webapp_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   4,
+			NumMessages:   2,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

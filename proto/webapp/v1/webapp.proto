@@ -5,28 +5,19 @@ package webapp;
 option go_package = "github.com/DatNguyen1998/FMAR_Proto/webapp/v1;webapppb";
 
 service WebappService {
-    rpc SubmitReview(SubmitReviewRequest) returns (SubmitReviewResponse);
-    rpc Ping(PingRequest) returns (PingResponse);
+  rpc SubmitReview(SubmitReviewRequest) returns (SubmitReviewResponse);
 }
-
-message PingRequest {
-    string message = 1;
-}
-
-message PingResponse {
-    string message = 2;
-} 
 
 message SubmitReviewRequest {
-    string phone = 1;
-    int32 rate = 2;
-    string comment = 3;
+  string phone = 1;
+  int32 rate = 2;
+  string comment = 3;
 }
 
 message SubmitReviewResponse {
-    string id = 1;
-    int32 rate = 2;
-    string comment = 3;
-    string phone = 4;
-    string created_at = 5;
+  string id = 1;
+  int32 rate = 2;
+  string comment = 3;
+  string phone = 4;
+  string created_at = 5;
 }

@@ -1,0 +1,54 @@
+syntax = "proto3";
+
+package webapp;
+
+option go_package = "github.com/DatNguyen1998/FMAR_Proto/core/v1;corepb";
+
+service ProductService {
+  rpc GetAll(GetAllRequest) returns (GetAllResponse);
+  rpc GetListPageing(GetListPagingRequest) returns (GetListPagingResponse);
+  rpc GetById(GetProductByIdRequest) returns (GetProductByIdResponse);
+}
+
+message ProductDto {
+  string id = 1;
+  string tenant_id = 2;
+  string created_at = 3;
+  string created_by = 4;
+  string updated_at = 5;
+  string updated_by = 6;
+  string name = 7;
+  int64 price = 8;
+  string category_id = 9;
+  string category_name = 10;
+  bool is_active = 11;
+}
+
+message GetAllRequest {
+    
+}
+
+message GetAllResponse {
+  repeated ProductDto products = 1;
+}
+
+message GetListPagingRequest {
+  int32 page = 1;
+  int32 page_size = 2;
+  string product_name = 3;
+}
+
+message GetListPagingResponse {
+  repeated ProductDto products = 1;
+  int32 total = 2;
+  bool is_previous_page = 3;
+  bool is_next_page = 4;
+}
+
+message GetProductByIdRequest {
+  string id = 1;
+}
+
+message GetProductByIdResponse {
+  ProductDto product = 1;
+}

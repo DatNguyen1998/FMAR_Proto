@@ -8,4 +8,10 @@ generate:
 	--go_opt=module=github.com/DatNguyen1998/FMAR_Proto \
 	--go-grpc_out=gen/go \
 	--go-grpc_opt=module=github.com/DatNguyen1998/FMAR_Proto \
-	proto/webapp/v1/webapp.proto
+	proto/**/v1/*.proto
+
+lint:
+	protolint lint proto/**/v1/*.proto
+
+fix:
+	protolint -fix proto/**/v1/*.proto
